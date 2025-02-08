@@ -1,65 +1,54 @@
-# Project Documentation
+# Neighbor4Hire
 
+Neighbor4Hire is a MERN-stack application designed to connect Service Seekers with Service Providers for local services such as plumbing, babysitting, and more. **Please note that we are still in the design phase—no production code has been written yet.**
 
-## Project Structure
+## Current Status
+
+- **Design Stage**: We are finalizing our software design document and overall project structure.  
+- **No Code Implemented**: Implementation will begin after the design and data modeling are complete.
+
+## Repository Structure
 
 ```
-neighbor-for-hire/
-├── client/                  # Front end (React)
-│   ├── public/              # Static assets (e.g., index.html)
-│   ├── src/                 # React source code
-│   │   ├── components/      # Reusable components (e.g., Navbar, Footer)
-│   │   ├── pages/           # Page components (e.g., Home, Login, Signup)
-│   │   ├── App.js           # Main application component
-│   │   ├── index.js         # Entry point for React app
-│   │   └── styles/          # CSS or styling files
-│   ├── package.json         # Front end dependencies
-│   └── README.md            # Front end documentation
+Neighbor4Hire/
 │
-├── server/                  # Back end (Node.js + Express)
-│   ├── controllers/         # Logic for handling requests (e.g., authController, jobController)
-│   ├── middleware/          # Custom middleware (e.g., authentication, error handling)
-│   ├── models/              # MongoDB models (e.g., User.js, Job.js)
-│   ├── routes/              # API routes (e.g., authRoutes, jobRoutes)
-│   ├── utils/               # Utility functions (e.g., JWT generation, validation)
-│   ├── .env                 # Environment variables (e.g., MONGO_URI, JWT_SECRET)
-│   ├── index.js             # Entry point for the server
-│   ├── package.json         # Back end dependencies
-│   └── README.md            # Back end documentation
+├── client/                        # React front end
+│   ├── __tests__/                 # React component tests (e.g., Jest, React Testing Library)
+│   ├── public/                    # Static assets (index.html, icons, etc.)
+│   ├── src/                       # Main React source code
+│   │   ├── components/            # Reusable UI components (e.g., Navbar, Footer)
+│   │   ├── pages/                 # Page components (e.g., Home, Login, Signup)
+│   │   ├── styles/                # CSS or styling files
+│   │   ├── App.js                 # Main application component (handles routing)
+│   │   └── index.js               # Entry point for the React app
+│   └── package.json               # Front end dependencies and scripts
 │
-├── .gitignore               # Files and folders to ignore in Git
-├── .eslintrc.json           # ESLint configuration for code linting
-├── .prettierrc              # Prettier configuration for code formatting
-└── README.md                # Project documentation
+├── Docs/                          # Architectural diagrams, project specs, or additional documentation
+│
+├── server/                        # Node.js + Express back end
+│   ├── controllers/               # Request handlers (e.g., authController, jobController)
+│   ├── middleware/                # Express middleware (authentication, error handling, etc.)
+│   ├── models/                    # Mongoose models (e.g., User.js, Job.js)
+│   ├── routes/                    # Express routes (e.g., authRoutes, jobRoutes)
+│   ├── tests/                     # Unit and integration tests
+│   ├── utils/                     # Utility functions (JWT generation, validation, etc.)
+│   ├── .env                       # Environment variables (e.g., MONGO_URI, JWT_SECRET)
+│   ├── index.js                   # Entry point for the server
+│   ├── package-lock.json          # Automatically generated for locking dependencies
+│   └── package.json               # Back end dependencies and scripts
+│
+├── .eslintrc.json                 # ESLint configuration for consistent code style
+├── .gitignore                     # Files and folders to ignore in Git
+├── .prettierrc                    # Prettier configuration for formatting
+└── README.md                      # Main project documentation
 ```
 
-### **1. Client (Front End)**
 
-- **`public/`**: Contains static assets like `index.html` and other files that don’t need processing.
-- **`src/`**: Contains the React application code.
-    - **`components/`**: Reusable UI components (e.g., Navbar, Footer).
-    - **`pages/`**: Page components (e.g., Home, Login, Signup).
-    - **`App.js`**: Main application component that handles routing.
-    - **`index.js`**: Entry point for the React app.
-    - **`styles/`**: CSS or styling files for the front end.
-- **`package.json`**: Lists front end dependencies and scripts.
-- **`README.md`**: Documentation for the front end.
+- For more details, see the [Software Design Document](./Docs/Neighbor4Hire_Software_Design_Document.md) in the `Docs/` folder.
 
-### **2. Server (Back End)**
+## Next Steps
 
-- **`controllers/`**: Contains logic for handling API requests (e.g., `authController.js`, `jobController.js`).
-- **`middleware/`**: Custom middleware for authentication, error handling, etc.
-- **`models/`**: MongoDB models (e.g., `User.js`, `Job.js`).
-- **`routes/`**: Defines API routes (e.g., `authRoutes.js`, `jobRoutes.js`).
-- **`utils/`**: Utility functions (e.g., JWT generation, input validation).
-- **`.env`**: Stores environment variables (e.g., `MONGO_URI`, `JWT_SECRET`).
-- **`index.js`**: Entry point for the Node.js server.
-- **`package.json`**: Lists back end dependencies and scripts.
-- **`README.md`**: Documentation for the back end.
+1. **Finalize Data Modeling**: Define Mongoose schemas for `User`, `Job`, `Review`, etc.
+2. **API Endpoints**: Outline REST endpoints (`/auth`, `/jobs`, `/payments`, `/reviews`).
+3. **UI/UX Wireframes**: Sketch key pages (registration flow, job listings, chat, etc.).
 
-### **3. Root Files**
-
-- **`.gitignore`**: Specifies files and folders to ignore in Git (e.g., `node_modules`, `.env`).
-- **`.eslintrc.json`**: Configuration for ESLint to enforce coding standards.
-- **`.prettierrc`**: Configuration for Prettier to format code consistently.
-- **`README.md`**: Overall project documentation.
