@@ -12,9 +12,9 @@ Neighbor4Hire is a MERN-stack application designed to connect Service Seekers wi
 ```
 Neighbor4Hire/
 │
-├── client/                        # React front end
+├── client/                        # React front end code
 │   ├── __tests__/                 # React component tests (e.g., Jest, React Testing Library)
-│   ├── public/                    # Static assets (index.html, icons, etc.)
+│   ├── public/                    # Static assets (e.g., index.html, icons)
 │   ├── src/                       # Main React source code
 │   │   ├── components/            # Reusable UI components (e.g., Navbar, Footer)
 │   │   ├── pages/                 # Page components (e.g., Home, Login, Signup)
@@ -23,24 +23,34 @@ Neighbor4Hire/
 │   │   └── index.js               # Entry point for the React app
 │   └── package.json               # Front end dependencies and scripts
 │
-├── Docs/                          # Architectural diagrams, project specs, or additional documentation
+├── Docs/                          # Documentation and design materials
+│   ├── wireframes/                # UI/UX mockups, wireframes, and flow diagrams
+│   └── Neighbor4Hire_Software_Design_Document.md  # Main software design document
 │
-├── server/                        # Node.js + Express back end
+├── server/                        # Node.js + Express back end code
+│   ├── config/                    # Configuration files (e.g., payment gateways, environment settings)
 │   ├── controllers/               # Request handlers (e.g., authController, jobController)
-│   ├── middleware/                # Express middleware (authentication, error handling, etc.)
+│   ├── middleware/                # Custom middleware (authentication, error handling, etc.)
 │   ├── models/                    # Mongoose models (e.g., User.js, Job.js)
 │   ├── routes/                    # Express routes (e.g., authRoutes, jobRoutes)
-│   ├── tests/                     # Unit and integration tests
-│   ├── utils/                     # Utility functions (JWT generation, validation, etc.)
+│   ├── tests/                     # Unit and integration tests for the back end
+│   ├── utils/                     # Utility functions (e.g., JWT generation, validation)
 │   ├── .env                       # Environment variables (e.g., MONGO_URI, JWT_SECRET)
-│   ├── index.js                   # Entry point for the server
-│   ├── package-lock.json          # Automatically generated for locking dependencies
+│   ├── index.js                   # Entry point for the Node.js server
+│   ├── package-lock.json          # Auto-generated lock file for dependencies
 │   └── package.json               # Back end dependencies and scripts
 │
-├── .eslintrc.json                 # ESLint configuration for consistent code style
+├── shared/                        # Shared utilities, types, or constants used across client and server
+│
+├── scripts/                       # Deployment and automation scripts (build, test, deploy, etc.)
+│
+├── docker/                        # Docker configuration files (e.g., Dockerfile, docker-compose.yml)
+│
+├── .eslintrc.json                 # ESLint configuration for code linting and style consistency
 ├── .gitignore                     # Files and folders to ignore in Git
-├── .prettierrc                    # Prettier configuration for formatting
-└── README.md                      # Main project documentation
+├── .prettierrc                    # Prettier configuration for consistent code formatting
+└── README.md                      # Main project README documentation
+
 ```
 
 
