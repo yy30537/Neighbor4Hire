@@ -1,6 +1,6 @@
 # **Neighbor4Hire — Software Design Document**
 
-> File Location: Docs/Neighbor4Hire_Software_Design_Document.md
+> File Location: Docs/Neighbor4Hire_SDD.md
 > 
 > 
 > **Last Updated**: 2/9/2025

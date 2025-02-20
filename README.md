@@ -23,9 +23,15 @@ Neighbor4Hire/
 │   │   └── index.js               # Entry point for the React app
 │   └── package.json               # Front end dependencies and scripts
 │
+├── docker/                        # Docker configuration files (e.g., Dockerfile, docker-compose.yml)
+│
 ├── Docs/                          # Documentation and design materials
 │   ├── wireframes/                # UI/UX mockups, wireframes, and flow diagrams
-│   └── Neighbor4Hire_Software_Design_Document.md  # Main software design document
+│   ├── CHANGELOG.md               # Chronologically ordered list of notable changes for each version of this project
+│   ├── CONTRIBUTING.md            # Contribution guidelines for this project
+│   └── Neighbor4Hire_SDD.md       # Main software design document
+│
+├── scripts/                       # Deployment and automation scripts (build, test, deploy, etc.)
 │
 ├── server/                        # Node.js + Express back end code
 │   ├── config/                    # Configuration files (e.g., payment gateways, environment settings)
@@ -42,23 +48,14 @@ Neighbor4Hire/
 │
 ├── shared/                        # Shared utilities, types, or constants used across client and server
 │
-├── scripts/                       # Deployment and automation scripts (build, test, deploy, etc.)
-│
-├── docker/                        # Docker configuration files (e.g., Dockerfile, docker-compose.yml)
-│
 ├── .eslintrc.json                 # ESLint configuration for code linting and style consistency
 ├── .gitignore                     # Files and folders to ignore in Git
 ├── .prettierrc                    # Prettier configuration for consistent code formatting
+├── 
+├── 
 └── README.md                      # Main project README documentation
 
 ```
 
 
 - For more details, see the [Software Design Document](./Docs/Neighbor4Hire_Software_Design_Document.md) in the `Docs/` folder.
-
-## Next Steps
-
-1. **Finalize Data Modeling**: Define Mongoose schemas for `User`, `Job`, `Review`, etc.
-2. **API Endpoints**: Outline REST endpoints (`/auth`, `/jobs`, `/payments`, `/reviews`).
-3. **UI/UX Wireframes**: Sketch key pages (registration flow, job listings, chat, etc.).
-
