@@ -1,61 +1,91 @@
 # Neighbor4Hire
 
-Neighbor4Hire is a MERN-stack application designed to connect Service Seekers with Service Providers for local services such as plumbing, babysitting, and more. **Please note that we are still in the design phase—no production code has been written yet.**
-
-## Current Status
-
-- **Design Stage**: We are finalizing our software design document and overall project structure.  
-- **No Code Implemented**: Implementation will begin after the design and data modeling are complete.
+Neighbor4Hire is a MERN-stack application designed to connect Service Seekers with Service Providers for local services. 
 
 ## Repository Structure
 
 ```
 Neighbor4Hire/
 │
-├── client/                        # React front end code
-│   ├── __tests__/                 # React component tests (e.g., Jest, React Testing Library)
-│   ├── public/                    # Static assets (e.g., index.html, icons)
-│   ├── src/                       # Main React source code
-│   │   ├── components/            # Reusable UI components (e.g., Navbar, Footer)
-│   │   ├── pages/                 # Page components (e.g., Home, Login, Signup)
-│   │   ├── styles/                # CSS or styling files
-│   │   ├── App.js                 # Main application component (handles routing)
-│   │   └── index.js               # Entry point for the React app
-│   └── package.json               # Front end dependencies and scripts
+├── client/                        # React frontend application
+│   ├── __tests__/                 # Unit & integration tests (Jest + React Testing Library)
+│   │
+│   ├── public/                    # Static assets and HTML entry point
+│   │   ├── assets/                # Images, fonts, icons
+│   │   └── index.html             # Main HTML template
+│   │
+│   ├── src/                       # Application source code
+│   │   ├── components/            # Reusable UI components (Buttons, Cards, Forms)
+│   │   ├── pages/                 # Route-based page components
+│   │   ├── styles/                # Global CSS/CSS-in-JS styles
+│   │   ├── App.jsx                # Root component with router configuration
+│   │   └── main.jsx               # React DOM mounting point
+│   │
+│   ├── package-lock.json          # Client dependency locks
+│   └── package.json               # React dependencies
 │
-├── docker/                        # Docker configuration files (e.g., Dockerfile, docker-compose.yml)
+├── docker/                        # Containerization setup
+│   ├── frontend.Dockerfile        # React app container
+│   ├── backend.Dockerfile         # Node.js API container
+│   └── compose.yaml               # Multi-container orchestration
 │
-├── Docs/                          # Documentation and design materials
-│   ├── wireframes/                # UI/UX mockups, wireframes, and flow diagrams
-│   ├── CHANGELOG.md               # Chronologically ordered list of notable changes for each version of this project
-│   ├── CONTRIBUTING.md            # Contribution guidelines for this project
-│   └── Neighbor4Hire_SDD.md       # Main software design document
+├── Docs/                          # Project documentation
+│   ├── wireframes/                # UI/UX designs (textual + visual)
+│   ├── CHANGELOG.md               # Version history
+│   ├── CONTRIBUTION.md            # Development guidelines
+│   └── SDD.md                     # Software Design Document
 │
-├── scripts/                       # Deployment and automation scripts (build, test, deploy, etc.)
+├── scripts/                       # Development automation
+│   ├── deploy.sh                  # Production deployment script
+│   └── setup.sh                   # Development environment setup
 │
-├── server/                        # Node.js + Express back end code
-│   ├── config/                    # Configuration files (e.g., payment gateways, environment settings)
-│   ├── controllers/               # Request handlers (e.g., authController, jobController)
-│   ├── middleware/                # Custom middleware (authentication, error handling, etc.)
-│   ├── models/                    # Mongoose models (e.g., User.js, Job.js)
-│   ├── routes/                    # Express routes (e.g., authRoutes, jobRoutes)
+├── server/                        # Node.js/Express backend
+│   ├── config/                    # Environment configurations
+│   │   └── db.config.js           # Database connection setup
+│   │
+│   ├── controllers/               # Business logic handlers
+│   │   ├── auth.controller.js     # Authentication operations
+│   │   └── jobs.controller.js     # Job-related operations
+│   │
+│   ├── middleware/                # Request processing middleware
+│   │   ├── auth.middleware.js     # Authentication/authorization
+│   │   └── error.middleware.js    # Error handling
+│   │
+│   ├── models/                    # MongoDB schema definitions
+│   │   ├── Booking.js             # Booking schema
+│   │   ├── Job.js                 # Job schema
+│   │   ├── Review.js              # Review schema
+│   │   ├── Transaction.js         # Transaction schema
+│   │   └── User.js                # User account schema
+│   │
+│   ├── routes/                    # API endpoint definitions
+│   │   ├── auth.routes.js         # Authentication endpoints
+│   │   └── jobs.routes.js         # Job-related endpoints
+│   │
 │   ├── tests/                     # Unit and integration tests for the back end
-│   ├── utils/                     # Utility functions (e.g., JWT generation, validation)
-│   ├── .env                       # Environment variables (e.g., MONGO_URI, JWT_SECRET)
-│   ├── index.js                   # Entry point for the Node.js server
-│   ├── package-lock.json          # Auto-generated lock file for dependencies
-│   └── package.json               # Back end dependencies and scripts
+│   │
+│   ├── utils/                     # Helper functions
+│   │   ├── jwt.util.js            # JWT token management
+│   │   └── validation.util.js     # Input validation
+│   │
+│   ├── .env                       # Environment variables (IGNORE IN VCS)
+│   ├── .env.example               # Environment template
+│   ├── index.js                   # Server entry point
+│   ├── package-lock.json          # Server dependency locks
+│   └── package.json               # Node.js dependencies
 │
-├── shared/                        # Shared utilities, types, or constants used across client and server
+├── shared/                        # Cross-project utilities
+│   └── constants.js               # Shared enums and configuration
 │
-├── .eslintrc.json                 # ESLint configuration for code linting and style consistency
-├── .gitignore                     # Files and folders to ignore in Git
-├── .prettierrc                    # Prettier configuration for consistent code formatting
-├── 
-├── 
-└── README.md                      # Main project README documentation
+├── .eslintrc.json                 # JavaScript linting rules
+├── .gitignore                     # VCS ignore patterns
+├── .prettierrc                    # Code formatting rules
+├── LICENSE                        # License information
+└── README.md                      # Project overview and setup
 
 ```
 
 
-- For more details, see the [Software Design Document](./Docs/Neighbor4Hire_Software_Design_Document.md) in the `Docs/` folder.
+- For more details, see the [Software Design Document](./Docs/Neighbor4Hire_SDD.md).
+- For contributing to the project, see the [Contribution Guidelines](./Docs/CONTRIBUTION.md).
+- For checking the recent updates, see the [Change Log](./Docs/CHANGELOG.md).

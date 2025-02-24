@@ -6,8 +6,7 @@ const jobSchema = new mongoose.Schema({
   priceModel: { type: String, enum: ['hourly', 'fixed'], required: true },
   price: { type: Number, required: true },
   status: { type: String, enum: ['open', 'booked', 'completed'], default: 'open' },
-  timeSlots: [Date], // Available time slots
+  timeSlots: [Date],
   seeker: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-  provider: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, // Assigned on booking
   createdAt: { type: Date, default: Date.now }
 });

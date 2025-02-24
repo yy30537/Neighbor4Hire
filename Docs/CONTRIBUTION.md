@@ -41,3 +41,7 @@ Examples:
 ## Reporting Issues
 
 Please use GitHub Issues to report bugs, request features, or ask questions.
+
+
+## Reference
+[Setting Guidelines For Repository Contributors](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors)

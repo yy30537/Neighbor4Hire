@@ -15,4 +15,12 @@ const userSchema = new mongoose.Schema({
   updatedAt: { type: Date, default: Date.now }
 });
 
-// Add pre-save hook for password hashing (bcryptjs)
+// Add password hashing to User model
+const bcrypt = require('bcryptjs');
+
+userSchema.pre('save', async function (next) {
+  if (this.isModified('password')) {
+    this.password = await bcrypt.hash(this.password, 12); // 12 rounds of salting
+  }
+  next();
+});
